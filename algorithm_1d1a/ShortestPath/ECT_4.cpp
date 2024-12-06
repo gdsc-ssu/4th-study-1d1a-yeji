@@ -32,9 +32,13 @@ int main(void) {
     cin >> x >> k;
 
     //플로이드 워셜 알고리즘
-  /*
-  
-  */
+    for (int k = 1; k <= n; k++) {
+        for (int a = 1; a <= n; a++) {
+            for (int b = 1; b <= n; b++) {
+                graph[a][b] = min(graph[a][b], graph[a][k] + graph[k][b]);
+            }
+        }
+    }
 
     int distance = graph[1][k] + graph[k][x];
 
